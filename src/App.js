@@ -1,6 +1,8 @@
+import { useState } from "react";
+
 function App() {
   const index = ["HTML", "CSS", "JavaScript", "React"]; // 원래 있던 코드
-  let selected = 0;
+  const [selected, setSelected] = useState(0);
 
   return (
     <div>
@@ -11,7 +13,7 @@ function App() {
             <li key={i}>
               <button
                 onClick={() => {
-                  selected = i;
+                  setSelected(i);
                 }}
               >
                 {x}

@@ -7,7 +7,13 @@ function App() {
         {index.map((x, i) => {
           return (
             <li key={i}>
-              <button>{x}</button>
+              <button
+                onClick={() => {
+                  alert("I am " + x);
+                }}
+              >
+                {x}
+              </button>
             </li>
           );
         })}

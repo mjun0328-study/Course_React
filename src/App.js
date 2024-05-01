@@ -1,5 +1,7 @@
 function App() {
-  const index = ["HTML", "CSS", "JavaScript", "React"];
+  const index = ["HTML", "CSS", "JavaScript", "React"]; // 원래 있던 코드
+  let selected = 0;
+
   return (
     <div>
       <h1>Hello, WEB!</h1>
@@ -9,7 +11,7 @@ function App() {
             <li key={i}>
               <button
                 onClick={() => {
-                  alert("I am " + x);
+                  selected = i;
                 }}
               >
                 {x}
@@ -18,7 +20,7 @@ function App() {
           );
         })}
       </ol>
-      <p>I love WEB</p>
+      <p>I love {index[selected]}</p>
     </div>
   );
 }

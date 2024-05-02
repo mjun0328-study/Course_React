@@ -4,6 +4,7 @@ HTML과 JavaScript에 낯을 익힌 분들의 다음 도약을 위해 준비된 
 
 ## 수업의 목차
 
-[Chapter 0. 수업 소개](./chap0.md)
-[Chapter 1. React와 첫인사](./chap1.md)
-[Chapter 2. 목차의 구현과 리액트 음미](./chap2.md)
+[Chapter 0. 수업 소개](./chap0.md)  
+[Chapter 1. React와 첫인사](./chap1.md)  
+[Chapter 2. 목차의 구현과 리액트 음미](./chap2.md)  
+[Chapter 3. useState로 본문 구현](./chap3.md)

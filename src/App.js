@@ -3,6 +3,7 @@ import { useState } from "react";
 function App() {
   const index = ["HTML", "CSS", "JavaScript", "React"]; // 원래 있던 코드
   const [selected, setSelected] = useState(0);
+  const ________________________;
 
   return (
     <div>
@@ -22,7 +23,23 @@ function App() {
           );
         })}
       </ol>
-      <p>I love {index[selected]}</p>
+      <p>______</p>
+      <div>
+        <button
+          onClick={() => {
+            ________________;
+          }}
+        >
+          LOVE
+        </button>
+        <button
+          onClick={() => {
+            ________________;
+          }}
+        >
+          HATE
+        </button>
+      </div>
     </div>
   );
 }

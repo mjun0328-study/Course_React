@@ -3,7 +3,7 @@ import { useState } from "react";
 function App() {
   const index = ["HTML", "CSS", "JavaScript", "React"]; // 원래 있던 코드
   const [selected, setSelected] = useState(0);
-  const ________________________;
+  const [verb, setVerb] = useState("love");
 
   return (
     <div>
@@ -23,18 +23,20 @@ function App() {
           );
         })}
       </ol>
-      <p>______</p>
+      <p>
+        I {verb} {index[selected]}
+      </p>
       <div>
         <button
           onClick={() => {
-            ________________;
+            setVerb("love");
           }}
         >
           LOVE
         </button>
         <button
           onClick={() => {
-            ________________;
+            setVerb("hate");
           }}
         >
           HATE

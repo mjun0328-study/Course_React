@@ -3,7 +3,7 @@ import { useState } from "react";
 function App() {
   const index = ["HTML", "CSS", "JavaScript", "React"]; // 원래 있던 코드
   const [selected, setSelected] = useState(0);
-  const _______ = _______;
+  const [counter, setCounter] = useState(0);
 
   return (
     <div>
@@ -27,15 +27,19 @@ function App() {
       <div>
         <button
           onClick={() => {
-            _______;
+            setCounter((prev) => {
+              return prev - 1;
+            });
           }}
         >
           -
         </button>
-        <span>_______</span>
+        <span>{counter}</span>
         <button
           onClick={() => {
-            _______;
+            setCounter((prev) => {
+              return prev + 1;
+            });
           }}
         >
           +

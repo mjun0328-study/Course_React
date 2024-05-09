@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 function App() {
-  const index = ["HTML", "CSS", "JavaScript", "React"]; // 원래 있던 코드
+  const [index, setIndex] = useState(["HTML", "CSS", "JavaScript", "React"]);
   const [selected, setSelected] = useState(0);
+  const [mode, setMode] = useState("view");
 
   return (
     <div>
@@ -22,7 +23,18 @@ function App() {
           );
         })}
       </ol>
-      <p>I love {index[selected]}</p>
+      {mode === "view" && (
+        <>
+          <p>I love {index[selected]}</p>
+          <button
+            onClick={() => {
+              setMode("create");
+            }}
+          >
+            Create
+          </button>
+        </>
+      )}
     </div>
   );
 }

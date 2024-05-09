@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function Nav(props) {
+function Nav({ index, setSelected, setMode }) {
   return (
     <ol>
-      {props.index.map((x, i) => {
+      {index.map((x, i) => {
         return (
           <li key={i}>
             <button
               onClick={() => {
-                props.setSelected(i);
-                props.setMode("view");
+                setSelected(i);
+                setMode("view");
               }}
             >
               {x}

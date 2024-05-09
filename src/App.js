@@ -4,6 +4,7 @@ function App() {
   const [index, setIndex] = useState(["HTML", "CSS", "JavaScript", "React"]);
   const [selected, setSelected] = useState(0);
   const [mode, setMode] = useState("view");
+  const [topic, setTopic] = useState("");
 
   return (
     <div>
@@ -33,6 +34,18 @@ function App() {
           >
             Create
           </button>
+        </>
+      )}
+      {mode === "create" && (
+        <>
+          <input
+            value={topic}
+            onChange={(e) => {
+              setTopic(e.target.value);
+            }}
+            placeholder="Enter new topic"
+          />
+          <button>Submit</button>
         </>
       )}
     </div>

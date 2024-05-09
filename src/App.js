@@ -16,6 +16,7 @@ function App() {
               <button
                 onClick={() => {
                   setSelected(i);
+                  setMode("view");
                 }}
               >
                 {x}
@@ -30,6 +31,7 @@ function App() {
           <button
             onClick={() => {
               setMode("create");
+              setTopic("");
             }}
           >
             Create
@@ -45,7 +47,18 @@ function App() {
             }}
             placeholder="Enter new topic"
           />
-          <button>Submit</button>
+          <button
+            onClick={() => {
+              setSelected(index.length);
+              setIndex((prev) => {
+                prev.push(topic);
+                return prev;
+              });
+              setMode("view");
+            }}
+          >
+            Submit
+          </button>
         </>
       )}
     </div>

@@ -1,5 +1,26 @@
 import { useState } from "react";
 
+function Nav() {
+  return (
+    <ol>
+      {index.map((x, i) => {
+        return (
+          <li key={i}>
+            <button
+              onClick={() => {
+                setSelected(i);
+                setMode("view");
+              }}
+            >
+              {x}
+            </button>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 function App() {
   const [index, setIndex] = useState(["HTML", "CSS", "JavaScript", "React"]);
   const [selected, setSelected] = useState(0);
@@ -9,22 +30,7 @@ function App() {
   return (
     <div>
       <h1>Hello, WEB!</h1>
-      <ol>
-        {index.map((x, i) => {
-          return (
-            <li key={i}>
-              <button
-                onClick={() => {
-                  setSelected(i);
-                  setMode("view");
-                }}
-              >
-                {x}
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+      <Nav />
       {mode === "view" && (
         <>
           <p>I love {index[selected]}</p>

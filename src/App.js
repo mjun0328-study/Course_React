@@ -21,14 +21,13 @@ function Nav({ index, setSelected, setMode }) {
   );
 }
 
-function View({ index, selected, setMode, setTopic }) {
+function View({ index, selected, setMode }) {
   return (
     <>
       <p>I love {index[selected]}</p>
       <button
         onClick={() => {
           setMode("create");
-          setTopic("");
         }}
       >
         Create
@@ -37,7 +36,9 @@ function View({ index, selected, setMode, setTopic }) {
   );
 }
 
-function Create({ index, setIndex, setSelected, setMode, topic, setTopic }) {
+function Create({ index, setIndex, setSelected, setMode }) {
+  const [topic, setTopic] = useState("");
+
   return (
     <>
       <input
@@ -67,19 +68,13 @@ function App() {
   const [index, setIndex] = useState(["HTML", "CSS", "JavaScript", "React"]);
   const [selected, setSelected] = useState(0);
   const [mode, setMode] = useState("view");
-  const [topic, setTopic] = useState("");
 
   return (
     <div>
       <h1>Hello, WEB!</h1>
       <Nav index={index} setSelected={setSelected} setMode={setMode} />
       {mode === "view" && (
-        <View
-          index={index}
-          selected={selected}
-          setMode={setMode}
-          setTopic={setTopic}
-        />
+        <View index={index} selected={selected} setMode={setMode} />
       )}
       {mode === "create" && (
         <Create
@@ -87,8 +82,6 @@ function App() {
           setIndex={setIndex}
           setSelected={setSelected}
           setMode={setMode}
-          topic={topic}
-          setTopic={setTopic}
         />
       )}
     </div>
